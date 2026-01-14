@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoramento de Páginas Falsas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>🔎 Monitoramento de Páginas Falsas</h1>
+
+      <label for="keyword">Empresa monitorada</label>
+    <select id="keyword">
+      <option value="rendimento">Rendimento</option>
+      <option value="cerc">Cerc</option>
+      <option value="unipar">Unipar</option>
+      <option value="biolab">Biolab</option>
+      <option value="alloha">Alloha</option>
+      <option value="sumicity">Sumicity</option>
+      <option value="gigamais">Gigamais</option>
+      <option value="unimed">Unimed</option>
+      <option value="unimedriopreto">Unimed Rio Preto</option>
+      <option value="voke">Voke</option>
+      <option value="qualicorp">Qualicorp</option>
+      <option value="brasilcred">BrasilCred</option>
+      <option value="agil">Agil</option>
+      <option value="bempromotora">Bempromotora</option>
+      <option value="outback">Outback</option>
+      <option value="agv">AGV</option>
+      <option value="fgcoop">Fgcoop</option>
+    </select>
+    <button onclick="iniciarBusca()">Iniciar Busca</button>
+
+    <p class="info">
+      O Chrome será aberto e permanecerá ativo para análise manual.
+    </p>
+  </div>
+
+  <script>
+    function iniciarBusca() {
+      const keyword = document.getElementById("keyword").value;
+      fetch(`http://localhost:3000/iniciar?keyword=${keyword}`);
+      alert("Bot iniciado! Verifique o Chrome.");
+    }
+  </script>
+
+</body>
+</html>
